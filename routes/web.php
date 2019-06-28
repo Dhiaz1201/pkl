@@ -42,4 +42,4 @@ Route::group(['prefix' => 'home', 'middleware' => ['auth']], function () {
     Route::resource('kategori', 'KategoriController');
     Route::resource('tag', 'TagController');
 });
-    Route::resource('/', 'FrontendController');
+    
