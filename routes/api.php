@@ -17,3 +17,12 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
    Route::resource('siswa', 'Api\SiswaController');
+      Route::resource('kategori', 'Api\KategoriController');
+          Route::resource('tag', 'Api\TagController');
+           Route::resource('/latest', 'Api\FrontendController');
+    Route::group(['prefix' => 'json' ], function () {
+     Route::get('/latest', 'Api\FrontendController@latest');
+      Route::get('/menu', 'Api\FrontendController@menu');
+      Route::get('/tag', 'Api\FrontendController@tag');
+      Route::get('/latestnews', 'Api\FrontendController@latestnews');
+ });

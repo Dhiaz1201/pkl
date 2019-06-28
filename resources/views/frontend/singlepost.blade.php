@@ -1,758 +1,339 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="description" content="">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <!-- The above 4 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-
-    <!-- Title -->
-    <title>The News Paper - News &amp; Lifestyle Magazine Template</title>
-
-    <!-- Favicon -->
-    <link rel="icon" href="img/core-img/favicon.ico">
-
-    <!-- Core Stylesheet -->
-    <link rel="stylesheet" href="style.css">
-
+<title>NewsFeed | Pages | Single Page</title>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" type="text/css" href="frontend/assets/css/bootstrap.min.css">
+<link rel="stylesheet" type="text/css" href="frontend/assets/css/font-awesome.min.css">
+<link rel="stylesheet" type="text/css" href="frontend/assets/css/animate.css">
+<link rel="stylesheet" type="text/css" href="frontend/assets/css/font.css">
+<link rel="stylesheet" type="text/css" href="frontend/assets/css/li-scroller.css">
+<link rel="stylesheet" type="text/css" href="frontend/assets/css/slick.css">
+<link rel="stylesheet" type="text/css" href="frontend/assets/css/jquery.fancybox.css">
+<link rel="stylesheet" type="text/css" href="frontend/assets/css/theme.css">
+<link rel="stylesheet" type="text/css" href="frontend/assets/css/style.css">
+<!--[if lt IE 9]>
+<script src="../assets/js/html5shiv.min.js"></script>
+<script src="../assets/js/respond.min.js"></script>
+<![endif]-->
 </head>
-
 <body>
-    <!-- ##### Header Area Start ##### -->
-    <header class="header-area">
-
-        <!-- Top Header Area -->
-        <div class="top-header-area">
-            <div class="container">
-                <div class="row">
-                    <div class="col-12">
-                        <div class="top-header-content d-flex align-items-center justify-content-between">
-                            <!-- Logo -->
-                            <div class="logo">
-                                <a href="index.html"><img src="img/core-img/logo.png" alt=""></a>
-                            </div>
-
-                            <!-- Login Search Area -->
-                            <div class="login-search-area d-flex align-items-center">
-                                <!-- Login -->
-                                <div class="login d-flex">
-                                    <a href="#">Login</a>
-                                    <a href="#">Register</a>
-                                </div>
-                                <!-- Search Form -->
-                                <div class="search-form">
-                                    <form action="#" method="post">
-                                        <input type="search" name="search" class="form-control" placeholder="Search">
-                                        <button type="submit"><i class="fa fa-search" aria-hidden="true"></i></button>
-                                    </form>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+<div id="preloader">
+  <div id="status">&nbsp;</div>
+</div>
+<a class="scrollToTop" href="#"><i class="fa fa-angle-up"></i></a>
+<div class="container">
+  <header id="header">
+    <div class="row">
+      <div class="col-lg-12 col-md-12 col-sm-12">
+        <div class="header_top">
+          <div class="header_top_left">
+            <ul class="top_nav">
+              <li><a href="../index.html">Home</a></li>
+              <li><a href="#">About</a></li>
+              <li><a href="contact.html">Contact</a></li>
+            </ul>
+          </div>
+          <div class="header_top_right">
+            <p>Friday, December 05, 2045</p>
+          </div>
         </div>
-
-        <!-- Navbar Area -->
-        <div class="newspaper-main-menu" id="stickyMenu">
-            <div class="classy-nav-container breakpoint-off">
-                <div class="container">
-                    <!-- Menu -->
-                    <nav class="classy-navbar justify-content-between" id="newspaperNav">
-
-                        <!-- Logo -->
-                        <div class="logo">
-                            <a href="index.html"><img src="img/core-img/logo.png" alt=""></a>
-                        </div>
-
-                        <!-- Navbar Toggler -->
-                        <div class="classy-navbar-toggler">
-                            <span class="navbarToggler"><span></span><span></span><span></span></span>
-                        </div>
-
-                        <!-- Menu -->
-                        <div class="classy-menu">
-
-                            <!-- close btn -->
-                            <div class="classycloseIcon">
-                                <div class="cross-wrap"><span class="top"></span><span class="bottom"></span></div>
-                            </div>
-
-                            <!-- Nav Start -->
-                            <div class="classynav">
-                                <ul>
-                                  <li class="active"><a href="{{ url('/') }}">Home</a></li>
-                                    <li><a href="#">Pages</a>
-                                        <ul class="dropdown">
-                                            <li><a href="{{ url('/') }}">Home</a></li>
-                                            <li><a href="{{url('catagories')}}">Catagories</a></li>
-                                            <li><a href="{{url('singlepost')}}">Single Articles</a></li>
-                                            <li><a href="{{url('about')}}">About Us</a></li>
-                                            <li><a href="{{url('contact')}}">Contact</a></li>
-                                            <li><a href="#">Dropdown</a>
-                                                <ul class="dropdown">
-                                                     <li><a href="{{ url('/') }}">Home</a></li>
-                                            <li><a href="{{url('catagories')}}">Catagories</a></li>
-                                            <li><a href="{{url('singlepost')}}">Single Articles</a></li>
-                                            <li><a href="{{url('about')}}">About Us</a></li>
-                                            <li><a href="{{url('contact')}}">Contact</a></li>
-                                                </ul>
-                                            </li>
-                                        </ul>
-                                    </li>
-                                    <li><a href="#">Mega Menu</a>
-                                        <div class="megamenu">
-                                            <ul class="single-mega cn-col-4">
-                                                <li class="title">Catagories</li>
-                                                <li><a href="index.html">Home</a></li>
-                                                <li><a href="catagories-post.html">Catagories</a></li>
-                                                <li><a href="single-post.html">Single Articles</a></li>
-                                                <li><a href="about.html">About Us</a></li>
-                                                <li><a href="contact.html">Contact</a></li>
-                                            </ul>
-                                            <ul class="single-mega cn-col-4">
-                                                <li class="title">Catagories</li>
-                                                <li><a href="index.html">Home</a></li>
-                                                <li><a href="catagories-post.html">Catagories</a></li>
-                                                <li><a href="single-post.html">Single Articles</a></li>
-                                                <li><a href="about.html">About Us</a></li>
-                                                <li><a href="contact.html">Contact</a></li>
-                                            </ul>
-                                            <ul class="single-mega cn-col-4">
-                                                <li class="title">Catagories</li>
-                                                <li><a href="index.html">Home</a></li>
-                                                <li><a href="catagories-post.html">Catagories</a></li>
-                                                <li><a href="single-post.html">Single Articles</a></li>
-                                                <li><a href="about.html">About Us</a></li>
-                                                <li><a href="contact.html">Contact</a></li>
-                                            </ul>
-                                            <div class="single-mega cn-col-4">
-                                                <!-- Single Featured Post -->
-                                                <div class="single-blog-post small-featured-post d-flex">
-                                                    <div class="post-thumb">
-                                                        <a href="#"><img src="img/bg-img/23.jpg" alt=""></a>
-                                                    </div>
-                                                    <div class="post-data">
-                                                        <a href="#" class="post-catagory">Travel</a>
-                                                        <div class="post-meta">
-                                                            <a href="#" class="post-title">
-                                                                <h6>Pellentesque mattis arcu massa, nec fringilla turpis eleifend id.</h6>
-                                                            </a>
-                                                            <p class="post-date"><span>7:00 AM</span> | <span>April 14</span></p>
-                                                        </div>
-                                                    </div>
-                                                </div>
-
-                                                <!-- Single Featured Post -->
-                                                <div class="single-blog-post small-featured-post d-flex">
-                                                    <div class="post-thumb">
-                                                        <a href="#"><img src="img/bg-img/24.jpg" alt=""></a>
-                                                    </div>
-                                                    <div class="post-data">
-                                                        <a href="#" class="post-catagory">Politics</a>
-                                                        <div class="post-meta">
-                                                            <a href="#" class="post-title">
-                                                                <h6>Augue semper congue sit amet ac sapien. Fusce consequat.</h6>
-                                                            </a>
-                                                            <p class="post-date"><span>7:00 AM</span> | <span>April 14</span></p>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </li>
-                                    <li><a href="#">Politics</a></li>
-                                    <li><a href="#">Breaking News</a></li>
-                                    <li><a href="#">Business</a></li>
-                                    <li><a href="#">Technology</a></li>
-                                    <li><a href="#">Health</a></li>
-                                    <li><a href="#">Travel</a></li>
-                                    <li><a href="#">Sports</a></li>
-                                    <li><a href="contact.html">Contact</a></li>
-                                </ul>
-                            </div>
-                            <!-- Nav End -->
-                        </div>
-                    </nav>
-                </div>
-            </div>
+      </div>
+      <div class="col-lg-12 col-md-12 col-sm-12">
+        <div class="header_bottom">
+          <div class="logo_area"><a href="../index.html" class="logo"><img src="frontend/images/logo.jpg" alt=""></a></div>
+          <div class="add_banner"><a href="#"><img src="frontend/images/addbanner_728x90_V1.jpg" alt=""></a></div>
         </div>
-    </header>
-    <!-- ##### Header Area End ##### -->
-
-    <!-- ##### Hero Area Start ##### -->
-    <div class="hero-area">
-        <div class="container">
-            <div class="row align-items-center">
-                <div class="col-12 col-lg-8">
-                    <!-- Breaking News Widget -->
-                    <div class="breaking-news-area d-flex align-items-center">
-                        <div class="news-title">
-                            <p>Breaking News</p>
-                        </div>
-                        <div id="breakingNewsTicker" class="ticker">
-                            <ul>
-                                <li><a href="#">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</a></li>
-                                <li><a href="#">Welcome to Colorlib Family.</a></li>
-                                <li><a href="#">Nam eu metus sitsit amet, consec!</a></li>
-                            </ul>
-                        </div>
-                    </div>
-
-                    <!-- Breaking News Widget -->
-                    <div class="breaking-news-area d-flex align-items-center mt-15">
-                        <div class="news-title title2">
-                            <p>International</p>
-                        </div>
-                        <div id="internationalTicker" class="ticker">
-                            <ul>
-                                <li><a href="#">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</a></li>
-                                <li><a href="#">Welcome to Colorlib Family.</a></li>
-                                <li><a href="#">Nam eu metus sitsit amet, consec!</a></li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Hero Add -->
-                <div class="col-12 col-lg-4">
-                    <div class="hero-add">
-                        <a href="#"><img src="img/bg-img/hero-add.gif" alt=""></a>
-                    </div>
-                </div>
-            </div>
-        </div>
+      </div>
     </div>
-    <!-- ##### Hero Area End ##### -->
-
-    <!-- ##### Blog Area Start ##### -->
-    <div class="blog-area section-padding-0-80">
-        <div class="container">
-            <div class="row">
-                <div class="col-12 col-lg-8">
-                    <div class="blog-posts-area">
-
-                        <!-- Single Featured Post -->
-                        <div class="single-blog-post featured-post single-post">
-                            <div class="post-thumb">
-                                <a href="#"><img src="img/bg-img/25.jpg" alt=""></a>
-                            </div>
-                            <div class="post-data">
-                                <a href="#" class="post-catagory">Finance</a>
-                                <a href="#" class="post-title">
-                                    <h6>Financial news: A new company is born today at the stock market</h6>
-                                </a>
-                                <div class="post-meta">
-                                    <p class="post-author">By <a href="#">Christinne Williams</a></p>
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam eu metus sit amet odio sodales placerat. Sed varius leo ac leo fermentum, eu cursus nunc maximus. Integer convallis nisi nibh, et ornare neque ullamcorper ac. Nam id congue lectus, a venenatis massa. Maecenas justo libero, vulputate vel nunc id, blandit feugiat sem.</p>
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque consectetur, purus imperdiet volutpat tincidunt, eros sem mollis quam, ut placerat urna neque at massa. Proin vitae pulvinar justo. Donec vel placerat enim, at ultricies risus. In posuere luctus sem, ac dapibus felis semper quis. Integer ex ante, semper at velit nec, ultrices aliquet diam. Donec gravida non metus blandit facilisis. Cras tincidunt, lorem aliquam molestie eleifend, libero dui volutpat dui, nec sodales massa libero ut metus. Mauris pretium elit ut dapibus consequat. Nam ut lorem nec sem dignissim gravida. Duis fringilla, augue eget lacinia tincidunt, neque leo maximus sem, sed tristique enim orci id quam.</p>
-                                    <p>Donec turpis erat, scelerisque id euismod sit amet, fermentum vel dolor. Nulla facilisi. Sed pellentesque lectus et accumsan aliquam. Fusce lobortis cursus quam, id mattis sapien. Aliquam erat volutpat. Aliquam placerat, est quis sagittis tincidunt, ipsum eros posuere mi, ut finibus quam sem eget ex. Interdum et malesuada fames ac ante ipsum primis in faucibus. Donec commodo quis enim ac auctor. Ut et mollis felis, sit amet ultricies est. Suspendisse sed faucibus tortor.</p>
-                                    <a href="#" class="related--post">Related: Facebook announces changes to combat election meddling</a>
-                                    <p>Donec turpis erat, scelerisque id euismod sit amet, fermentum vel dolor. Nulla facilisi. Sed pellentesque lectus et accu msan aliquam. Fusce lobortis cursus quam, id mattis sapien. Aliquam erat volutpat. Aliquam placerat, est quis sagi ttis tincidunt, ipsum eros posuere mi, ut finibus quam sem eget ex. Interdum et malesuada fames ac ante ipsum pr imis in faucibus. Donec commodo quis enim ac auctor. Ut et mollis felis, sit amet ultricies est. Suspendisse sed faucibus tortor. </p>
-                                    <div class="newspaper-post-like d-flex align-items-center justify-content-between">
-                                        <!-- Tags -->
-                                        <div class="newspaper-tags d-flex">
-                                            <span>Tags:</span>
-                                            <ul class="d-flex">
-                                                <li><a href="#">finacial,</a></li>
-                                                <li><a href="#">politics,</a></li>
-                                                <li><a href="#">stock market</a></li>
-                                            </ul>
-                                        </div>
-
-                                        <!-- Post Like & Post Comment -->
-                                        <div class="d-flex align-items-center post-like--comments">
-                                            <a href="#" class="post-like"><img src="img/core-img/like.png" alt=""> <span>392</span></a>
-                                            <a href="#" class="post-comment"><img src="img/core-img/chat.png" alt=""> <span>10</span></a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- About Author -->
-                        <div class="blog-post-author d-flex">
-                            <div class="author-thumbnail">
-                                <img src="img/bg-img/32.jpg" alt="">
-                            </div>
-                            <div class="author-info">
-                                <a href="#" class="author-name">James Smith, <span>The Author</span></a>
-                                <p>Donec turpis erat, scelerisque id euismod sit amet, fermentum vel dolor. Nulla facilisi. Sed pellen tesque lectus et accu msan aliquam. Fusce lobortis cursus quam, id mattis sapien.</p>
-                            </div>
-                        </div>
-
-                        <div class="pager d-flex align-items-center justify-content-between">
-                            <div class="prev">
-                                <a href="#" class="active"><i class="fa fa-angle-left"></i> previous</a>
-                            </div>
-                            <div class="next">
-                                <a href="#">Next <i class="fa fa-angle-right"></i></a>
-                            </div>
-                        </div>
-
-                        <div class="section-heading">
-                            <h6>Related</h6>
-                        </div>
-
-                        <div class="row">
-                            <!-- Single Post -->
-                            <div class="col-12 col-md-6">
-                                <div class="single-blog-post style-3 mb-80">
-                                    <div class="post-thumb">
-                                        <a href="#"><img src="img/bg-img/12.jpg" alt=""></a>
-                                    </div>
-                                    <div class="post-data">
-                                        <a href="#" class="post-catagory">Finance</a>
-                                        <a href="#" class="post-title">
-                                            <h6>Dolor sit amet, consectetur adipiscing elit. Nam eu metus sit amet odio sodales placer. Sed varius leo ac...</h6>
-                                        </a>
-                                        <div class="post-meta d-flex align-items-center">
-                                            <a href="#" class="post-like"><img src="img/core-img/like.png" alt=""> <span>392</span></a>
-                                            <a href="#" class="post-comment"><img src="img/core-img/chat.png" alt=""> <span>10</span></a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <!-- Single Post -->
-                            <div class="col-12 col-md-6">
-                                <div class="single-blog-post style-3 mb-80">
-                                    <div class="post-thumb">
-                                        <a href="#"><img src="img/bg-img/13.jpg" alt=""></a>
-                                    </div>
-                                    <div class="post-data">
-                                        <a href="#" class="post-catagory">Finance</a>
-                                        <a href="#" class="post-title">
-                                            <h6>Dolor sit amet, consectetur adipiscing elit. Nam eu metus sit amet odio sodales placer. Sed varius leo ac...</h6>
-                                        </a>
-                                        <div class="post-meta d-flex align-items-center">
-                                            <a href="#" class="post-like"><img src="img/core-img/like.png" alt=""> <span>392</span></a>
-                                            <a href="#" class="post-comment"><img src="img/core-img/chat.png" alt=""> <span>10</span></a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Comment Area Start -->
-                        <div class="comment_area clearfix">
-                            <h5 class="title">3 Comments</h5>
-
-                            <ol>
-                                <!-- Single Comment Area -->
-                                <li class="single_comment_area">
-                                    <!-- Comment Content -->
-                                    <div class="comment-content d-flex">
-                                        <!-- Comment Author -->
-                                        <div class="comment-author">
-                                            <img src="img/bg-img/30.jpg" alt="author">
-                                        </div>
-                                        <!-- Comment Meta -->
-                                        <div class="comment-meta">
-                                            <a href="#" class="post-author">Christian Williams</a>
-                                            <a href="#" class="post-date">April 15, 2018</a>
-                                            <p>Donec turpis erat, scelerisque id euismod sit amet, fermentum vel dolor. Nulla facilisi. Sed pellen tesque lectus et accu msan aliquam. Fusce lobortis cursus quam, id mattis sapien.</p>
-                                        </div>
-                                    </div>
-                                    <ol class="children">
-                                        <li class="single_comment_area">
-                                            <!-- Comment Content -->
-                                            <div class="comment-content d-flex">
-                                                <!-- Comment Author -->
-                                                <div class="comment-author">
-                                                    <img src="img/bg-img/31.jpg" alt="author">
-                                                </div>
-                                                <!-- Comment Meta -->
-                                                <div class="comment-meta">
-                                                    <a href="#" class="post-author">Sandy Doe</a>
-                                                    <a href="#" class="post-date">April 15, 2018</a>
-                                                    <p>Donec turpis erat, scelerisque id euismod sit amet, fermentum vel dolor. Nulla facilisi. Sed pellen tesque lectus et accu msan aliquam. Fusce lobortis cursus quam, id mattis sapien.</p>
-                                                </div>
-                                            </div>
-                                        </li>
-                                    </ol>
-                                </li>
-
-                                <!-- Single Comment Area -->
-                                <li class="single_comment_area">
-                                    <!-- Comment Content -->
-                                    <div class="comment-content d-flex">
-                                        <!-- Comment Author -->
-                                        <div class="comment-author">
-                                            <img src="img/bg-img/32.jpg" alt="author">
-                                        </div>
-                                        <!-- Comment Meta -->
-                                        <div class="comment-meta">
-                                            <a href="#" class="post-author">Christian Williams</a>
-                                            <a href="#" class="post-date">April 15, 2018</a>
-                                            <p>Donec turpis erat, scelerisque id euismod sit amet, fermentum vel dolor. Nulla facilisi. Sed pellen tesque lectus et accu msan aliquam. Fusce lobortis cursus quam, id mattis sapien.</p>
-                                        </div>
-                                    </div>
-                                </li>
-                            </ol>
-                        </div>
-
-                        <div class="post-a-comment-area section-padding-80-0">
-                            <h4>Leave a comment</h4>
-                            
-                            <!-- Reply Form -->
-                            <div class="contact-form-area">
-                                <form action="#" method="post">
-                                    <div class="row">
-                                        <div class="col-12 col-lg-6">
-                                            <input type="text" class="form-control" id="name" placeholder="Name*">
-                                        </div>
-                                        <div class="col-12 col-lg-6">
-                                            <input type="email" class="form-control" id="email" placeholder="Email*">
-                                        </div>
-                                        <div class="col-12">
-                                            <input type="text" class="form-control" id="subject" placeholder="Website">
-                                        </div>
-                                        <div class="col-12">
-                                            <textarea name="message" class="form-control" id="message" cols="30" rows="10" placeholder="Message"></textarea>
-                                        </div>
-                                        <div class="col-12 text-center">
-                                            <button class="btn newspaper-btn mt-30 w-100" type="submit">Submit Comment</button>
-                                        </div>
-                                    </div>
-                                </form>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-12 col-lg-4">
-                    <div class="blog-sidebar-area">
-
-                        <!-- Latest Posts Widget -->
-                        <div class="latest-posts-widget mb-50">
-
-                            <!-- Single Featured Post -->
-                            <div class="single-blog-post small-featured-post d-flex">
-                                <div class="post-thumb">
-                                    <a href="#"><img src="img/bg-img/19.jpg" alt=""></a>
-                                </div>
-                                <div class="post-data">
-                                    <a href="#" class="post-catagory">Finance</a>
-                                    <div class="post-meta">
-                                        <a href="#" class="post-title">
-                                            <h6>Pellentesque mattis arcu massa, nec fringilla turpis eleifend id.</h6>
-                                        </a>
-                                        <p class="post-date"><span>7:00 AM</span> | <span>April 14</span></p>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <!-- Single Featured Post -->
-                            <div class="single-blog-post small-featured-post d-flex">
-                                <div class="post-thumb">
-                                    <a href="#"><img src="img/bg-img/20.jpg" alt=""></a>
-                                </div>
-                                <div class="post-data">
-                                    <a href="#" class="post-catagory">Politics</a>
-                                    <div class="post-meta">
-                                        <a href="#" class="post-title">
-                                            <h6>Sed a elit euismod augue semper congue sit amet ac sapien.</h6>
-                                        </a>
-                                        <p class="post-date"><span>7:00 AM</span> | <span>April 14</span></p>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <!-- Single Featured Post -->
-                            <div class="single-blog-post small-featured-post d-flex">
-                                <div class="post-thumb">
-                                    <a href="#"><img src="img/bg-img/21.jpg" alt=""></a>
-                                </div>
-                                <div class="post-data">
-                                    <a href="#" class="post-catagory">Health</a>
-                                    <div class="post-meta">
-                                        <a href="#" class="post-title">
-                                            <h6>Pellentesque mattis arcu massa, nec fringilla turpis eleifend id.</h6>
-                                        </a>
-                                        <p class="post-date"><span>7:00 AM</span> | <span>April 14</span></p>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <!-- Single Featured Post -->
-                            <div class="single-blog-post small-featured-post d-flex">
-                                <div class="post-thumb">
-                                    <a href="#"><img src="img/bg-img/22.jpg" alt=""></a>
-                                </div>
-                                <div class="post-data">
-                                    <a href="#" class="post-catagory">Finance</a>
-                                    <div class="post-meta">
-                                        <a href="#" class="post-title">
-                                            <h6>Augue semper congue sit amet ac sapien. Fusce consequat.</h6>
-                                        </a>
-                                        <p class="post-date"><span>7:00 AM</span> | <span>April 14</span></p>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <!-- Single Featured Post -->
-                            <div class="single-blog-post small-featured-post d-flex">
-                                <div class="post-thumb">
-                                    <a href="#"><img src="img/bg-img/23.jpg" alt=""></a>
-                                </div>
-                                <div class="post-data">
-                                    <a href="#" class="post-catagory">Travel</a>
-                                    <div class="post-meta">
-                                        <a href="#" class="post-title">
-                                            <h6>Pellentesque mattis arcu massa, nec fringilla turpis eleifend id.</h6>
-                                        </a>
-                                        <p class="post-date"><span>7:00 AM</span> | <span>April 14</span></p>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <!-- Single Featured Post -->
-                            <div class="single-blog-post small-featured-post d-flex">
-                                <div class="post-thumb">
-                                    <a href="#"><img src="img/bg-img/24.jpg" alt=""></a>
-                                </div>
-                                <div class="post-data">
-                                    <a href="#" class="post-catagory">Politics</a>
-                                    <div class="post-meta">
-                                        <a href="#" class="post-title">
-                                            <h6>Augue semper congue sit amet ac sapien. Fusce consequat.</h6>
-                                        </a>
-                                        <p class="post-date"><span>7:00 AM</span> | <span>April 14</span></p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Popular News Widget -->
-                        <div class="popular-news-widget mb-50">
-                            <h3>4 Most Popular News</h3>
-
-                            <!-- Single Popular Blog -->
-                            <div class="single-popular-post">
-                                <a href="#">
-                                    <h6><span>1.</span> Amet, consectetur adipiscing elit. Nam eu metus sit amet odio sodales.</h6>
-                                </a>
-                                <p>April 14, 2018</p>
-                            </div>
-
-                            <!-- Single Popular Blog -->
-                            <div class="single-popular-post">
-                                <a href="#">
-                                    <h6><span>2.</span> Consectetur adipiscing elit. Nam eu metus sit amet odio sodales placer.</h6>
-                                </a>
-                                <p>April 14, 2018</p>
-                            </div>
-
-                            <!-- Single Popular Blog -->
-                            <div class="single-popular-post">
-                                <a href="#">
-                                    <h6><span>3.</span> Adipiscing elit. Nam eu metus sit amet odio sodales placer. Sed varius leo.</h6>
-                                </a>
-                                <p>April 14, 2018</p>
-                            </div>
-
-                            <!-- Single Popular Blog -->
-                            <div class="single-popular-post">
-                                <a href="#">
-                                    <h6><span>4.</span> Eu metus sit amet odio sodales placer. Sed varius leo ac...</h6>
-                                </a>
-                                <p>April 14, 2018</p>
-                            </div>
-                        </div>
-
-                        <!-- Newsletter Widget -->
-                        <div class="newsletter-widget mb-50">
-                            <h4>Newsletter</h4>
-                            <p>Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</p>
-                            <form action="#" method="post">
-                                <input type="text" name="text" placeholder="Name">
-                                <input type="email" name="email" placeholder="Email">
-                                <button type="submit" class="btn w-100">Subscribe</button>
-                            </form>
-                        </div>
-
-                        <!-- Latest Comments Widget -->
-                        <div class="latest-comments-widget">
-                            <h3>Latest Comments</h3>
-
-                            <!-- Single Comments -->
-                            <div class="single-comments d-flex">
-                                <div class="comments-thumbnail mr-15">
-                                    <img src="img/bg-img/29.jpg" alt="">
-                                </div>
-                                <div class="comments-text">
-                                    <a href="#">Jamie Smith <span>on</span> Facebook is offering facial recognition...</a>
-                                    <p>06:34 am, April 14, 2018</p>
-                                </div>
-                            </div>
-
-                            <!-- Single Comments -->
-                            <div class="single-comments d-flex">
-                                <div class="comments-thumbnail mr-15">
-                                    <img src="img/bg-img/30.jpg" alt="">
-                                </div>
-                                <div class="comments-text">
-                                    <a href="#">Jamie Smith <span>on</span> Facebook is offering facial recognition...</a>
-                                    <p>06:34 am, April 14, 2018</p>
-                                </div>
-                            </div>
-
-                            <!-- Single Comments -->
-                            <div class="single-comments d-flex">
-                                <div class="comments-thumbnail mr-15">
-                                    <img src="img/bg-img/31.jpg" alt="">
-                                </div>
-                                <div class="comments-text">
-                                    <a href="#">Jamie Smith <span>on</span> Facebook is offering facial recognition...</a>
-                                    <p>06:34 am, April 14, 2018</p>
-                                </div>
-                            </div>
-
-                            <!-- Single Comments -->
-                            <div class="single-comments d-flex">
-                                <div class="comments-thumbnail mr-15">
-                                    <img src="img/bg-img/32.jpg" alt="">
-                                </div>
-                                <div class="comments-text">
-                                    <a href="#">Jamie Smith <span>on</span> Facebook is offering facial recognition...</a>
-                                    <p>06:34 am, April 14, 2018</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+  </header>
+  <section id="navArea">
+    <nav class="navbar navbar-inverse" role="navigation">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar"> <span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button>
+      </div>
+      <div id="navbar" class="navbar-collapse collapse">
+        <ul class="nav navbar-nav main_nav">
+          <li class="active"><a href="../index.html"><span class="fa fa-home desktop-home"></span><span class="mobile-show">Home</span></a></li>
+          <li><a href="#">Technology</a></li>
+          <li class="dropdown"> <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Mobile</a>
+            <ul class="dropdown-menu" role="menu">
+              <li><a href="#">Android</a></li>
+              <li><a href="#">Samsung</a></li>
+              <li><a href="#">Nokia</a></li>
+              <li><a href="#">Walton Mobile</a></li>
+              <li><a href="#">Sympony</a></li>
+            </ul>
+          </li>
+          <li><a href="#">Laptops</a></li>
+          <li><a href="#">Tablets</a></li>
+          <li><a href="contact.html">Contact Us</a></li>
+          <li><a href="404.html">404 Page</a></li>
+        </ul>
+      </div>
+    </nav>
+  </section>
+  <section id="newsSection">
+    <div class="row">
+      <div class="col-lg-12 col-md-12">
+        <div class="latest_newsarea"> <span>Latest News</span>
+          <ul id="ticker01" class="news_sticker">
+            <li><a href="#"><img src="frontend/images/news_thumbnail3.jpg" alt="">My First News Item</a></li>
+            <li><a href="#"><img src="frontend/images/news_thumbnail3.jpg" alt="">My Second News Item</a></li>
+            <li><a href="#"><img src="frontend/images/news_thumbnail3.jpg" alt="">My Third News Item</a></li>
+            <li><a href="#"><img src="frontend/images/news_thumbnail3.jpg" alt="">My Four News Item</a></li>
+            <li><a href="#"><img src="frontend/images/news_thumbnail3.jpg" alt="">My Five News Item</a></li>
+            <li><a href="#"><img src="frontend/images/news_thumbnail3.jpg" alt="">My Six News Item</a></li>
+            <li><a href="#"><img src="frontend/images/news_thumbnail3.jpg" alt="">My Seven News Item</a></li>
+            <li><a href="#"><img src="frontend/images/news_thumbnail3.jpg" alt="">My Eight News Item</a></li>
+            <li><a href="#"><img src="frontend/images/news_thumbnail2.jpg" alt="">My Nine News Item</a></li>
+          </ul>
+          <div class="social_area">
+            <ul class="social_nav">
+              <li class="facebook"><a href="#"></a></li>
+              <li class="twitter"><a href="#"></a></li>
+              <li class="flickr"><a href="#"></a></li>
+              <li class="pinterest"><a href="#"></a></li>
+              <li class="googleplus"><a href="#"></a></li>
+              <li class="vimeo"><a href="#"></a></li>
+              <li class="youtube"><a href="#"></a></li>
+              <li class="mail"><a href="#"></a></li>
+            </ul>
+          </div>
         </div>
+      </div>
     </div>
-    <!-- ##### Blog Area End ##### -->
-
-    <!-- ##### Footer Area Start ##### -->
-    <footer class="footer-area">
-
-        <!-- Main Footer Area -->
-        <div class="main-footer-area">
-            <div class="container">
-                <div class="row">
-
-                    <!-- Footer Widget Area -->
-                    <div class="col-12 col-sm-6 col-lg-4">
-                        <div class="footer-widget-area mt-80">
-                            <!-- Footer Logo -->
-                            <div class="footer-logo">
-                                <a href="index.html"><img src="img/core-img/logo.png" alt=""></a>
-                            </div>
-                            <!-- List -->
-                            <ul class="list">
-                                <li><a href="mailto:contact@youremail.com">contact@youremail.com</a></li>
-                                <li><a href="tel:+4352782883884">+43 5278 2883 884</a></li>
-                                <li><a href="http://yoursitename.com">www.yoursitename.com</a></li>
-                            </ul>
-                        </div>
-                    </div>
-
-                    <!-- Footer Widget Area -->
-                    <div class="col-12 col-sm-6 col-lg-2">
-                        <div class="footer-widget-area mt-80">
-                            <!-- Title -->
-                            <h4 class="widget-title">Politics</h4>
-                            <!-- List -->
-                            <ul class="list">
-                                <li><a href="#">Business</a></li>
-                                <li><a href="#">Markets</a></li>
-                                <li><a href="#">Tech</a></li>
-                                <li><a href="#">Luxury</a></li>
-                            </ul>
-                        </div>
-                    </div>
-
-                    <!-- Footer Widget Area -->
-                    <div class="col-12 col-sm-4 col-lg-2">
-                        <div class="footer-widget-area mt-80">
-                            <!-- Title -->
-                            <h4 class="widget-title">Featured</h4>
-                            <!-- List -->
-                            <ul class="list">
-                                <li><a href="#">Football</a></li>
-                                <li><a href="#">Golf</a></li>
-                                <li><a href="#">Tennis</a></li>
-                                <li><a href="#">Motorsport</a></li>
-                                <li><a href="#">Horseracing</a></li>
-                                <li><a href="#">Equestrian</a></li>
-                                <li><a href="#">Sailing</a></li>
-                                <li><a href="#">Skiing</a></li>
-                            </ul>
-                        </div>
-                    </div>
-
-                    <!-- Footer Widget Area -->
-                    <div class="col-12 col-sm-4 col-lg-2">
-                        <div class="footer-widget-area mt-80">
-                            <!-- Title -->
-                            <h4 class="widget-title">FAQ</h4>
-                            <!-- List -->
-                            <ul class="list">
-                                <li><a href="#">Aviation</a></li>
-                                <li><a href="#">Business</a></li>
-                                <li><a href="#">Traveller</a></li>
-                                <li><a href="#">Destinations</a></li>
-                                <li><a href="#">Features</a></li>
-                                <li><a href="#">Food/Drink</a></li>
-                                <li><a href="#">Hotels</a></li>
-                                <li><a href="#">Partner Hotels</a></li>
-                            </ul>
-                        </div>
-                    </div>
-
-                    <!-- Footer Widget Area -->
-                    <div class="col-12 col-sm-4 col-lg-2">
-                        <div class="footer-widget-area mt-80">
-                            <!-- Title -->
-                            <h4 class="widget-title">+More</h4>
-                            <!-- List -->
-                            <ul class="list">
-                                <li><a href="#">Fashion</a></li>
-                                <li><a href="#">Design</a></li>
-                                <li><a href="#">Architecture</a></li>
-                                <li><a href="#">Arts</a></li>
-                                <li><a href="#">Autos</a></li>
-                                <li><a href="#">Luxury</a></li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
+  </section>
+  <section id="contentSection">
+    <div class="row">
+      <div class="col-lg-8 col-md-8 col-sm-8">
+        <div class="left_content">
+          <div class="single_page">
+            <ol class="breadcrumb">
+              <li><a href="../index.html">Home</a></li>
+              <li><a href="#">Technology</a></li>
+              <li class="active">Mobile</li>
+            </ol>
+            <h1>Morbi dapibus, enim quis luctus interdum</h1>
+            <div class="post_commentbox"> <a href="#"><i class="fa fa-user"></i>Wpfreeware</a> <span><i class="fa fa-calendar"></i>6:49 AM</span> <a href="#"><i class="fa fa-tags"></i>Technology</a> </div>
+            <div class="single_page_content"> <img class="img-center" src="../images/single_post_img.jpg" alt="">
+              <p>Nunc tincidunt, elit non cursus euismod, lacus augue ornare metus, egestas imperdiet nulla nisl quis mauris. Suspendisse a pharetra urna. Morbi dui lectus, pharetra nec elementum eget, vulputate ut nisi. Aliquam accumsan, nulla sed feugiat vehicula, lacus justo semper libero, quis porttitor turpis odio sit amet ligula. Duis dapibus fermentum orci, nec malesuada libero vehicula ut. Integer sodales, urna eget interdum eleifend, nulla nibh laoreet nisl, quis dignissim mauris dolor eget mi. Donec at mauris enim. Duis nisi tellus, adipiscing a convallis quis, tristique vitae risus. Nullam molestie gravida lobortis. Proin ut nibh quis felis auctor ornare. Cras ultricies, nibh at mollis faucibus, justo eros porttitor mi, quis auctor lectus arcu sit amet nunc. Vivamus gravida vehicula arcu, vitae vulputate augue lacinia faucibus.</p>
+              <blockquote> Donec volutpat nibh sit amet libero ornare non laoreet arcu luctus. Donec id arcu quis mauris euismod placerat sit amet ut metus. Sed imperdiet fringilla sem eget euismod. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Pellentesque adipiscing, neque ut pulvinar tincidunt, est sem euismod odio, eu ullamcorper turpis nisl sit amet velit. Nullam vitae nibh odio, non scelerisque nibh. Vestibulum ut est augue, in varius purus. </blockquote>
+              <ul>
+                <li>Nullam vitae nibh odio, non scelerisque nibh</li>
+                <li>Nullam vitae nibh odio, non scelerisque nibh</li>
+                <li>Nullam vitae nibh odio, non scelerisque nibh</li>
+                <li>Nullam vitae nibh odio, non scelerisque nibh</li>
+                <li>Nullam vitae nibh odio, non scelerisque nibh</li>
+                <li>Nullam vitae nibh odio, non scelerisque nibh</li>
+              </ul>
+              <h2>This is h2 title</h2>
+              <h3>This is h3 title</h3>
+              <h4>This is h4 title</h4>
+              <h5>This is h5 title</h5>
+              <h6>This is h6 Title</h6>
+              <button class="btn default-btn">Default</button>
+              <button class="btn btn-red">Red Button</button>
+              <button class="btn btn-yellow">Yellow Button</button>
+              <button class="btn btn-green">Green Button</button>
+              <button class="btn btn-black">Black Button</button>
+              <button class="btn btn-orange">Orange Button</button>
+              <button class="btn btn-blue">Blue Button</button>
+              <button class="btn btn-lime">Lime Button</button>
+              <button class="btn btn-theme">Theme Button</button>
             </div>
-        </div>
-
-        <!-- Bottom Footer Area -->
-        <div class="bottom-footer-area">
-            <div class="container h-100">
-                <div class="row h-100 align-items-center">
-                    <div class="col-12">
-                        <!-- Copywrite -->
-                        <p><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
-<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p>
-                    </div>
-                </div>
+            <div class="social_link">
+              <ul class="sociallink_nav">
+                <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
+                <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
+                <li><a href="#"><i class="fa fa-pinterest"></i></a></li>
+              </ul>
             </div>
+            <div class="related_post">
+              <h2>Related Post <i class="fa fa-thumbs-o-up"></i></h2>
+              <ul class="spost_nav wow fadeInDown animated">
+                <li>
+                  <div class="media"> <a class="media-left" href="single_page.html"> <img src="frontend/images/post_img1.jpg" alt=""> </a>
+                    <div class="media-body"> <a class="catg_title" href="single_page.html"> Aliquam malesuada diam eget turpis varius</a> </div>
+                  </div>
+                </li>
+                <li>
+                  <div class="media"> <a class="media-left" href="single_page.html"> <img src="frontend/images/post_img2.jpg" alt=""> </a>
+                    <div class="media-body"> <a class="catg_title" href="single_page.html"> Aliquam malesuada diam eget turpis varius</a> </div>
+                  </div>
+                </li>
+                <li>
+                  <div class="media"> <a class="media-left" href="single_page.html"> <img src="frontend/images/post_img1.jpg" alt=""> </a>
+                    <div class="media-body"> <a class="catg_title" href="single_page.html"> Aliquam malesuada diam eget turpis varius</a> </div>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
         </div>
-    </footer>
-    <!-- ##### Footer Area Start ##### -->
-
-    <!-- ##### All Javascript Files ##### -->
-    <!-- jQuery-2.2.4 js -->
-    <script src="js/jquery/jquery-2.2.4.min.js"></script>
-    <!-- Popper js -->
-    <script src="js/bootstrap/popper.min.js"></script>
-    <!-- Bootstrap js -->
-    <script src="js/bootstrap/bootstrap.min.js"></script>
-    <!-- All Plugins js -->
-    <script src="js/plugins/plugins.js"></script>
-    <!-- Active js -->
-    <script src="js/active.js"></script>
+      </div>
+      <nav class="nav-slit"> <a class="prev" href="#"> <span class="icon-wrap"><i class="fa fa-angle-left"></i></span>
+        <div>
+          <h3>City Lights</h3>
+          <img src="frontend/images/post_img1.jpg" alt=""/> </div>
+        </a> <a class="next" href="#"> <span class="icon-wrap"><i class="fa fa-angle-right"></i></span>
+        <div>
+          <h3>Street Hills</h3>
+          <img src="frontend/images/post_img1.jpg" alt=""/> </div>
+        </a> </nav>
+      <div class="col-lg-4 col-md-4 col-sm-4">
+        <aside class="right_content">
+          <div class="single_sidebar">
+            <h2><span>Popular Post</span></h2>
+            <ul class="spost_nav">
+              <li>
+                <div class="media wow fadeInDown"> <a href="single_page.html" class="media-left"> <img alt="" src="../images/post_img1.jpg"> </a>
+                  <div class="media-body"> <a href="single_page.html" class="catg_title"> Aliquam malesuada diam eget turpis varius 1</a> </div>
+                </div>
+              </li>
+              <li>
+                <div class="media wow fadeInDown"> <a href="single_page.html" class="media-left"> <img alt="" src="../images/post_img2.jpg"> </a>
+                  <div class="media-body"> <a href="single_page.html" class="catg_title"> Aliquam malesuada diam eget turpis varius 2</a> </div>
+                </div>
+              </li>
+              <li>
+                <div class="media wow fadeInDown"> <a href="single_page.html" class="media-left"> <img alt="" src="../images/post_img1.jpg"> </a>
+                  <div class="media-body"> <a href="single_page.html" class="catg_title"> Aliquam malesuada diam eget turpis varius 3</a> </div>
+                </div>
+              </li>
+              <li>
+                <div class="media wow fadeInDown"> <a href="single_page.html" class="media-left"> <img alt="" src="../images/post_img2.jpg"> </a>
+                  <div class="media-body"> <a href="single_page.html" class="catg_title"> Aliquam malesuada diam eget turpis varius 4</a> </div>
+                </div>
+              </li>
+            </ul>
+          </div>
+          <div class="single_sidebar">
+            <ul class="nav nav-tabs" role="tablist">
+              <li role="presentation" class="active"><a href="#category" aria-controls="home" role="tab" data-toggle="tab">Category</a></li>
+              <li role="presentation"><a href="#video" aria-controls="profile" role="tab" data-toggle="tab">Video</a></li>
+              <li role="presentation"><a href="#comments" aria-controls="messages" role="tab" data-toggle="tab">Comments</a></li>
+            </ul>
+            <div class="tab-content">
+              <div role="tabpanel" class="tab-pane active" id="category">
+                <ul>
+                  <li class="cat-item"><a href="#">Sports</a></li>
+                  <li class="cat-item"><a href="#">Fashion</a></li>
+                  <li class="cat-item"><a href="#">Business</a></li>
+                  <li class="cat-item"><a href="#">Technology</a></li>
+                  <li class="cat-item"><a href="#">Games</a></li>
+                  <li class="cat-item"><a href="#">Life &amp; Style</a></li>
+                  <li class="cat-item"><a href="#">Photography</a></li>
+                </ul>
+              </div>
+              <div role="tabpanel" class="tab-pane" id="video">
+                <div class="vide_area">
+                  <iframe width="100%" height="250" src="http://www.youtube.com/embed/h5QWbURNEpA?feature=player_detailpage" frameborder="0" allowfullscreen></iframe>
+                </div>
+              </div>
+              <div role="tabpanel" class="tab-pane" id="comments">
+                <ul class="spost_nav">
+                  <li>
+                    <div class="media wow fadeInDown"> <a href="single_page.html" class="media-left"> <img alt="" src="../images/post_img1.jpg"> </a>
+                      <div class="media-body"> <a href="single_page.html" class="catg_title"> Aliquam malesuada diam eget turpis varius 1</a> </div>
+                    </div>
+                  </li>
+                  <li>
+                    <div class="media wow fadeInDown"> <a href="single_page.html" class="media-left"> <img alt="" src="../images/post_img2.jpg"> </a>
+                      <div class="media-body"> <a href="single_page.html" class="catg_title"> Aliquam malesuada diam eget turpis varius 2</a> </div>
+                    </div>
+                  </li>
+                  <li>
+                    <div class="media wow fadeInDown"> <a href="single_page.html" class="media-left"> <img alt="" src="../images/post_img1.jpg"> </a>
+                      <div class="media-body"> <a href="single_page.html" class="catg_title"> Aliquam malesuada diam eget turpis varius 3</a> </div>
+                    </div>
+                  </li>
+                  <li>
+                    <div class="media wow fadeInDown"> <a href="single_page.html" class="media-left"> <img alt="" src="../images/post_img2.jpg"> </a>
+                      <div class="media-body"> <a href="single_page.html" class="catg_title"> Aliquam malesuada diam eget turpis varius 4</a> </div>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="single_sidebar wow fadeInDown">
+            <h2><span>Sponsor</span></h2>
+            <a class="sideAdd" href="#"><img src="frontend/images/add_img.jpg" alt=""></a> </div>
+          <div class="single_sidebar wow fadeInDown">
+            <h2><span>Category Archive</span></h2>
+            <select class="catgArchive">
+              <option>Select Category</option>
+              <option>Life styles</option>
+              <option>Sports</option>
+              <option>Technology</option>
+              <option>Treads</option>
+            </select>
+          </div>
+          <div class="single_sidebar wow fadeInDown">
+            <h2><span>Links</span></h2>
+            <ul>
+              <li><a href="#">Blog</a></li>
+              <li><a href="#">Rss Feed</a></li>
+              <li><a href="#">Login</a></li>
+              <li><a href="#">Life &amp; Style</a></li>
+            </ul>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </section>
+  <footer id="footer">
+    <div class="footer_top">
+      <div class="row">
+        <div class="col-lg-4 col-md-4 col-sm-4">
+          <div class="footer_widget wow fadeInLeftBig">
+            <h2>Flickr Images</h2>
+          </div>
+        </div>
+        <div class="col-lg-4 col-md-4 col-sm-4">
+          <div class="footer_widget wow fadeInDown">
+            <h2>Tag</h2>
+            <ul class="tag_nav">
+              <li><a href="#">Games</a></li>
+              <li><a href="#">Sports</a></li>
+              <li><a href="#">Fashion</a></li>
+              <li><a href="#">Business</a></li>
+              <li><a href="#">Life &amp; Style</a></li>
+              <li><a href="#">Technology</a></li>
+              <li><a href="#">Photo</a></li>
+              <li><a href="#">Slider</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="col-lg-4 col-md-4 col-sm-4">
+          <div class="footer_widget wow fadeInRightBig">
+            <h2>Contact</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+            <address>
+            Perfect News,1238 S . 123 St.Suite 25 Town City 3333,USA Phone: 123-326-789 Fax: 123-546-567
+            </address>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="footer_bottom">
+      <p class="copyright">Copyright &copy; 2045 <a href="../index.html">NewsFeed</a></p>
+      <p class="developer">Developed By Wpfreeware</p>
+    </div>
+  </footer>
+</div>
+<script src="frontend/assets/js/jquery.min.js"></script> 
+<script src="frontend/assets/js/wow.min.js"></script> 
+<script src="frontend/assets/js/bootstrap.min.js"></script> 
+<script src="frontend/assets/js/slick.min.js"></script> 
+<script src="frontend/assets/js/jquery.li-scroller.1.0.js"></script> 
+<script src="frontend/assets/js/jquery.newsTicker.min.js"></script> 
+<script src="frontend/assets/js/jquery.fancybox.pack.js"></script> 
+<script src="frontend/assets/js/custom.js"></script>
 </body>
-
 </html>

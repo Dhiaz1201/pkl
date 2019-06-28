@@ -13,7 +13,7 @@ class FrontendController extends Controller
      */
     public function index()
     {
-        return view('frontend');
+        return view('frontend.index');
     }
 
     /**
@@ -81,4 +81,6 @@ class FrontendController extends Controller
     {
         //
     }
+
+    
 }

@@ -11,7 +11,7 @@
 |
 */
 
-Route::get('/', function () {
+Route::get('index', function () {
     return view('welcome');
 });
 
@@ -22,7 +22,7 @@ Route::get('/home', 'HomeController@index')->name('home');
 Route::get('backend', function () {
     return view('backend');
 });
-Route::get('index', function () {
+Route::get('/', function () {
     return view('frontend.index');
 });
 Route::get('about', function () {
@@ -37,3 +37,9 @@ Route::get('contact', function () {
 Route::get('singlepost', function () {
     return view('frontend.singlepost');
 });
+Route::group(['prefix' => 'home', 'middleware' => ['auth']], function () {
+    Route::resource('artikel', 'ArtikelController');
+    Route::resource('kategori', 'KategoriController');
+    Route::resource('tag', 'TagController');
+});
+    Route::resource('/', 'FrontendController');
