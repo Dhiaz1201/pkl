@@ -1,12 +1,13 @@
-@extends('layouts.app')
+@extends('layouts.backend')
+@section('css')
+<link rel="stylesheet" href="/backend/assets/vendor/select2/select2.min.css">
+@endsection
 @section('js')
 <script src="{{asset('assets/ckeditor/ckeditor.js')}}"></script>
+<script src="/backend/assets/vendor/select2/select2.min.js"></script>
+<script src="/backend/assets/js/components/select2-init.js"></script>
 <script>
-  var konten = document.getElementById("konten");
-    CKEDITOR.replace(konten,{
-    language:'en-gb'
-  });
-  CKEDITOR.config.allowedContent = true;
+CKEDITOR.replace( 'editor1' );
 </script>
 @endsection
 @section('content')
@@ -25,7 +26,7 @@
     </div>
     <div class="form-group">
         <label>Konten</label>
-        <textarea id="konten" class="form-control" name="konten" rows="10" cols="50">{{ $artikel->konten }}</textarea>
+        <textarea id="editor1" name="konten" class="form-control" name="konten" rows="10" cols="50">{{ $artikel->konten }}</textarea>
     </div>
     <div class="form-group">
         <label for="">Foto</label><br>

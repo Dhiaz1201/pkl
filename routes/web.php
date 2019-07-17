@@ -34,12 +34,11 @@ Route::get('catagories', function () {
 Route::get('contact', function () {
     return view('frontend.contact');
 });
-Route::get('singlepost', function () {
-    return view('frontend.singlepost');
-});
+
 Route::group(['prefix' => 'home', 'middleware' => ['auth']], function () {
     Route::resource('artikel', 'ArtikelController');
     Route::resource('kategori', 'KategoriController');
     Route::resource('tag', 'TagController');
+
 });
     

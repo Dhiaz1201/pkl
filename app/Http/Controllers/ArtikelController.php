@@ -107,13 +107,13 @@ class ArtikelController extends Controller
      */
     public function update(Request $request, $id)
     {
-         $request->validate([
-            'judul' => 'required',
-            'konten' => 'required|min:50',
-            'foto' => 'mimes:jpeg.jpg.png.gif|max:2048',
-            'kategori' => 'required',
-            'tag' => 'required'
-        ]);
+    //     $request->validate([
+    //        'judul' => 'required',
+    //        'konten' => 'required|min:50',
+    //        'foto' => 'mimes:jpeg.jpg.png.gif|max:2048',
+    //        'kategori' => 'required',
+    //        'tag' => 'required'
+    //    ]);
 
         $artikel = Artikel::findOrFail($id);
 
@@ -121,7 +121,7 @@ class ArtikelController extends Controller
         $artikel->slug = str_slug($request->judul);
         $artikel->konten = $request->konten;
         $artikel->user_id = Auth::user()->id;
-        $artikel->kategori_id = $request->kategori;
+        $artikel->kategori_id = $request->kategori_id;
         # Foto
         if ($request->hasFile('foto')) {
             $file = $request->file('foto');
@@ -140,10 +140,11 @@ class ArtikelController extends Controller
             }
             $artikel->foto = $filename;
         }
+         $artikel->tag()->sync($request->tag);
         $artikel->save();
-        $artikel->tag()->sync($request->tag);
+       
 
-        toastr()->success('Data artikel berhasil diubah!');
+      
 
         return redirect()->route('artikel.index');
     }
