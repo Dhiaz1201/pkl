@@ -21,10 +21,10 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
           Route::resource('tag', 'Api\TagController');
            Route::resource('/latest', 'Api\FrontendController');
     Route::group(['prefix' => 'json' ], function () {
-      Route::get('/latest', 'Api\FrontendController@latest');
+      Route::get('/singlepost', 'Api\FrontendController@singlepost');
        Route::get('/menu', 'Api\FrontendController@menu');
        Route::get('/tag', 'Api\FrontendController@tag');
        Route::get('/latestnews', 'Api\FrontendController@latestnews');
-       Route::get('/singlepost{artikel}','Api\FrontendController@singlepost');
+    //    Route::get('/single-post{artikel}','Api\FrontendController@singlepost');
     // Route::get('/index', 'Api\FrontendController@index');
  });

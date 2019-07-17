@@ -1,3 +1,5 @@
+@extends('layouts.frontend')
+@section('content')
 <!DOCTYPE html>
 <html>
 <head>
@@ -337,3 +339,4 @@
 <script src="frontend/assets/js/custom.js"></script>
 </body>
 </html>
+@endsection()

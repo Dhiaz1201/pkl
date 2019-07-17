@@ -14,7 +14,7 @@ class FrontendController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-     public function latest()
+     public function singlepost()
     {
         $artikel = Artikel::orderBy('created_at', 'desc')->take(3)->get();
          $response = [
@@ -58,12 +58,12 @@ class FrontendController extends Controller
              return response()->json($response,200);
     
      }
-     public function singlepost()
-     {
-         $kategori = Kategori::all();
-         $tag = Tag::all();
-         return view('frontend.singlepost',compact('artikel','tag','kategori'));
-     }
+    //  public function singlepost()
+    //  {
+    //      $kategori = Kategori::all();
+    //      $tag = Tag::all();
+    //      return view('frontend.singlepost',compact('artikel','tag','kategori'));
+    //  }
     // public function index()
     // {
     //     $menu = Kategori::get();

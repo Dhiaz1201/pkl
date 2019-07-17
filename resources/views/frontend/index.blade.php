@@ -35,7 +35,7 @@
           <h2><span>Latest post</span></h2>
           <div class="latest_post_container">
             <div id="prev-button"><i class="fa fa-chevron-up"></i></div>
-            <ul class="latest_postnav latest-berita">
+            <ul class="latest_postnav singlepost">
              
             </ul>
             <div id="next-button"><i class="fa  fa-chevron-down"></i></div>
@@ -332,11 +332,11 @@
 
     var url ='api/json'
             $.ajax({
-                  url: url + '/latest',
+                  url: url + '/singlepost',
                   datatype : 'json',
                   success:function(berhasil){
                        $.each(berhasil.data,function(key,value){
-                       $(".latest-berita").append(
+                       $(".singlepost").append(
                          `
                          <li>
                 <div class="media"> <a href="pages/single_page.html" class="media-left"> <img alt="" src="assets/img/artikel/${value.foto}"> </a>
@@ -377,11 +377,11 @@
 })
 
      </script>
-         {{-- <script>
+          {{-- <script>
 
     var url ='api/json'
             $.ajax({
-                  url: url + '/singlepost',
+                  url: url + '/single-post',
                   datatype : 'json',
                   success:function(berhasil){
                        $.each(berhasil.data,function(key,value){
