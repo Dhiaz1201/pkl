@@ -135,7 +135,6 @@ class AtikelController extends Controller
             ]);
             return redirect()->route('artikel.index');
         }
-
     }
 
     /**

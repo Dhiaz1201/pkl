@@ -49,7 +49,7 @@ class FrontendController extends Controller
      }
       public function latestnews()
      {
-         $artikel = Artikel::orderBy('created_at', 'desc')->get();
+         $artikel = Artikel::orderBy('created_at', 'desc')->take(3)->get();
           $response = [
                  'success' =>true,
                  'data' => $artikel,
@@ -58,39 +58,7 @@ class FrontendController extends Controller
              return response()->json($response,200);
     
      }
-    //  public function singlepost()
-    //  {
-    //      $kategori = Kategori::all();
-    //      $tag = Tag::all();
-    //      return view('frontend.singlepost',compact('artikel','tag','kategori'));
-    //  }
-    // public function index()
-    // {
-    //     $menu = Kategori::get();
-    //     $tag = Artikel::orderBy()->get();
-    //     $populer = Artikel::inRandomOrdertake(3)->get();
-    //     $konten = Artikel::where('headline', 1)->orderBy('created_at', 'desc')->take(3)->get();
-    //     $article = Artikel::select('articles.title', 'articles.slug', 'headline', 'image', 'categories.title as categories', 'users.name as author')
-    //         ->join('users', 'users.id', '=', 'articles.user_id')
-    //         ->join('categories', 'categories.id', '=', 'articles.category_id')
-    //          ->paginate(2);
-    //     $trending = Artikel::inRandomOrder()->take(3)->get();
-    //     $latest = Artikel::orderBy('created_at', 'desc')->take(4)->get();
-    //     $response = [
-    //         'success' => true,
-    //         'data' => [
-    //         'menu' => $menu, 
-    //         'top' => $populer, 
-    //          'populer' => $konten, 
-    //          'konten' => $article, 
-    //          'trending' => $trending,
-    //          'tag'=>$tag, 
-    //          'latest' => $latest],
-    //         'message' => 'Berhasil.'
-    //     ];
-    //     return response()->json($response, 200);
-    //}
-
+   
 
     /**
      * Show the form for creating a new resource.
