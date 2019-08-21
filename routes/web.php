@@ -22,9 +22,9 @@ Route::get('/home', 'HomeController@index')->name('home');
 Route::get('backend', function () {
     return view('backend');
 });
-Route::get('/', function () {
-    return view('frontend.index');
-});
+// Route::get('/', function () {
+//     return view('frontend.index');
+// });
 Route::get('about', function () {
     return view('frontend.about');
 });
@@ -34,6 +34,8 @@ Route::get('catagories', function () {
 Route::get('contact', function () {
     return view('frontend.contact');
 });
+ Route::resource('/', 'FrontendController');
+//  Route::get('/', 'FrontendController@index')->name('home');
 
 Route::group(['prefix' => 'home', 'middleware' => ['auth']], function () {
     Route::resource('artikel', 'ArtikelController');

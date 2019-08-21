@@ -13,7 +13,7 @@
                             <tr>
                                 <th>No</th>
                                 <th>Judul</th>
-                                <th>Kategori</th>
+                                <th>Kategori</th>   
                                 <th>Foto</th>
                                 <th>Tag</th>
                                 <th clospan="3" style="text-align: center;">Aksi</th>

@@ -3,6 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Artikel;
+use App\Kategori;
+use App\Tag;
 
 class FrontendController extends Controller
 {
@@ -13,7 +16,10 @@ class FrontendController extends Controller
      */
     public function index()
     {
-        return view('frontend.index');
+       $artikel =Artikel::with('kategori','tag')->get();
+       $kategori = Kategori::all();
+       $tag =Tag::all();
+       return view ('frontend.index',compact('artikel','kategori','tag'));
     }
 
     /**
