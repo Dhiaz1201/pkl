@@ -48,6 +48,7 @@ class ArtikelController extends Controller
         $artikel->judul = $request->judul;
         $artikel->slug = str_slug($request->judul);
         $artikel->konten = $request->konten;
+        $artikel->map = $request->map;
           $artikel->user_id = Auth::user()->id;
         $artikel->kategori_id = $request->kategori;
 
@@ -120,6 +121,7 @@ class ArtikelController extends Controller
         $artikel->judul = $request->judul;
         $artikel->slug = str_slug($request->judul);
         $artikel->konten = $request->konten;
+          $artikel->map = $request->map;
         $artikel->user_id = Auth::user()->id;
         $artikel->kategori_id = $request->kategori_id;
         # Foto

@@ -21,7 +21,15 @@ class FrontendController extends Controller
        $tag =Tag::all();
        return view ('frontend.index',compact('artikel','kategori','tag'));
     }
-
+   public function singlepost(Artikel $artikel)
+    {
+        $artikel = Artikel::where('slug', $artikel->slug)->get();
+        return view('frontend.single-post', compact('artikel'));
+    }
+    public function contact()
+    {
+      return view('frontend.contact');
+    }
     /**
      * Show the form for creating a new resource.
      *

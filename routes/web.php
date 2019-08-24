@@ -35,7 +35,9 @@ Route::get('contact', function () {
     return view('frontend.contact');
 });
  Route::resource('/', 'FrontendController');
-//  Route::get('/', 'FrontendController@index')->name('home');
+Route::get('/{artikel}', 'FrontendController@singlepost')->name('single-post');
+ 
+//  Route::get('contact', 'FrontendController@contact')->name('contact');
 
 Route::group(['prefix' => 'home', 'middleware' => ['auth']], function () {
     Route::resource('artikel', 'ArtikelController');

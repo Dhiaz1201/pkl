@@ -33,7 +33,7 @@
             <ul class="top_nav">
               <li><a href="{{ url("/") }}">Home</a></li>
               <li><a href="{{ url("about") }}">About</a></li>
-              <li><a href="{{ url("contact") }}">Contact</a></li>
+              <li><a href="{{ url("frontend.contact") }}">Contact</a></li>
             </ul>
           </div>
           <div class="header_top_right">
@@ -71,7 +71,7 @@
           </li>
           <li><a href="#">Laptops</a></li>
           <li><a href="#">Tablets</a></li>
-          <li><a href="pages/contact.html">Contact Us</a></li>
+          <li><a href="/frontend/contact">Contact Us</a></li>
           <li><a href="pages/404.html">404 Page</a></li>
         </ul>
       </div>

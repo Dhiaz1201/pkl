@@ -16,6 +16,7 @@
                                 <th>Kategori</th>   
                                 <th>Foto</th>
                                 <th>Tag</th>
+                                <th>Map</th>
                                 <th clospan="3" style="text-align: center;">Aksi</th>
                             </tr>
                 @php $no =1; @endphp
@@ -30,7 +31,8 @@
                         @foreach ($data->tag as $a)
                             {{ $a->name }}
                         @endforeach
-                    </td>                  
+                    </td>                
+                           <td>{{ $data->map }}</td>  
                     <td><a href="{{ route('artikel.edit', $data->id) }}" class="btn btn-warning">Edit</a></td>
                     <td><a href="{{ route('artikel.show', $data->id) }}" class="btn btn-success">Detail Data</a></td>
                     <td><form action="{{ route('artikel.destroy', $data->id) }}" method="post">

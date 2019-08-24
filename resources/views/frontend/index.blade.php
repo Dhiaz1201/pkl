@@ -9,7 +9,7 @@
            <img src="{{ asset('assets/img/artikel/'.$data->foto) }}"></a>
             <div class="slider_article">
                <h2><a class="slider_tittle" href="pages/single_page.html">{{ $data->judul }}</a></h2>
-              <p>{{ $data->konten }}</p>
+              <p>{!! substr($data->konten,0,100) !!}.....</p>
             </div>
           </div>
           @endforeach
@@ -57,9 +57,9 @@
             <div class="single_post_content_left">
               <ul class="business_catgnav  wow fadeInDown">
                 <li>
-                   <figure class="bsbig_fig"> <a href="pages/single_page.html" class="featured_img"> <img src="{{ asset('assets/img/artikel/'.$data->foto) }}" alt="" height="200px" width="300px"> <span class="overlay"></span> </a>
-                    <figcaption> <a href="pages/single_page.html">{{ $data->judul }}</a> </figcaption>
-                    <p>{{ $data->konten }}</p>
+                   <figure class="bsbig_fig"> <a href="{{ route('single-post', $data->slug) }}" class="featured_img"> <img src="{{ asset('assets/img/artikel/'.$data->foto) }}" alt="" height="200px" width="300px"> <span class="overlay"></span> </a>
+                    <figcaption> <a href="{{ route('single-post', $data->slug) }}">{{ $data->judul }}</a> </figcaption>
+                    <p>{!! substr($data->konten,0,100) !!}....</p>
                   </figure>
                 </li>
               </ul>
