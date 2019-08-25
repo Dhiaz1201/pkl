@@ -16,10 +16,10 @@ class FrontendController extends Controller
      */
     public function index()
     {
-       $artikel =Artikel::with('kategori','tag')->get();
-       $kategori = Kategori::all();
+       $artikel =Artikel::orderBy('created_at','desc')->get();
+       $artikel1 =Artikel::inRandomOrder()->paginate(3);
        $tag =Tag::all();
-       return view ('frontend.index',compact('artikel','kategori','tag'));
+       return view ('frontend.index',compact('artikel','artikel1','tag'));
     }
    public function singlepost(Artikel $artikel)
     {

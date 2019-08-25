@@ -55,6 +55,10 @@ CKEDITOR.replace( 'editor1' );
             @endforeach
         </select>
     </div>
+      <div class="form-group">
+        <label for="">map</label>
+        <input class="form-control" type="text" name="map">
+    </div>
     <div class="form-group">
         <button type="submit" class="btn btn-outline-info">
         Simpan Data

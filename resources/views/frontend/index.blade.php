@@ -36,11 +36,11 @@
       </div>
       <div class="col-lg-4 col-md-4 col-sm-4">
         <div class="latest_post">
-          <h2><span>Latest post</span></h2>
+          <h2><span>Recomend post</span></h2>
           <div class="latest_post_container">
             <div id="prev-button"><i class="fa fa-chevron-up"></i></div>
             <ul class="latest_postnav">
-            @foreach ($artikel as $data )
+            @foreach ($artikel1 as $data )
              <li>
                 <div class="media"> <a href="{{ route('single-post', $data->slug) }}" class="media-left"> <img alt="" src="{{ asset('assets/img/artikel/'.$data->foto) }}"> </a>
                   <div class="media-body"> <a href="{{ route('single-post', $data->slug) }}" class="catg_title">{{ $data->judul }}</a> </div>
