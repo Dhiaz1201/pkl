@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Kategori;
 use App\Tag;
 use App\Artikel;
+use App\Menu;
 use Session;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\File;
@@ -33,7 +34,8 @@ class ArtikelController extends Controller
     {
              $kategori = Kategori::all();
         $tag = Tag::all();
-        return view('backend.artikel.create', compact('kategori', 'tag'));
+        $menu = Menu::all();
+        return view('backend.artikel.create', compact('kategori', 'tag','menu'));
     }
 
     /**
@@ -62,6 +64,7 @@ class ArtikelController extends Controller
 
         $artikel->save();
         $artikel->tag()->attach($request->tag);
+         $artikel->menu()->attach($request->menu);
         Session::flash("flash_notification", [
             "level" => "success",
             "message" => "Berhasil menyimpan data artikel berjudul <b>$artikel->judul</b>!"
@@ -96,7 +99,8 @@ class ArtikelController extends Controller
         $kategori = Kategori::all();
         $tag = tag::all();
         $selected = $artikel->tag->pluck('id')->toArray();
-        return view('backend.artikel.edit', compact('artikel', 'selected', 'kategori', 'tag'));
+          $selected = $artikel->menu->pluck('id')->toArray();
+        return view('backend.artikel.edit', compact('artikel', 'selected', 'kategori', 'tag','menu'));
     }
 
     /**
@@ -143,6 +147,7 @@ class ArtikelController extends Controller
             $artikel->foto = $filename;
         }
          $artikel->tag()->sync($request->tag);
+          $artikel->menu()->sync($request->menu);
         $artikel->save();
        
 

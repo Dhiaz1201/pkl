@@ -43,6 +43,6 @@ Route::group(['prefix' => 'home', 'middleware' => ['auth']], function () {
     Route::resource('artikel', 'ArtikelController');
     Route::resource('kategori', 'KategoriController');
     Route::resource('tag', 'TagController');
-
+ Route::resource('menu', 'MenuController');
 });
     

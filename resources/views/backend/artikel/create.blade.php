@@ -58,6 +58,16 @@
         <input class="form-control" type="text" name="map">
     </div>
     <div class="form-group">
+        <label for="">Menu</label>
+        <select name="menu[]" id="select2" class="form-control multiple select2" multiple>
+    @foreach($menu as $data)
+        <option value="{{ $data->id }}">
+            {{ $data->nama }}
+        </option>
+    @endforeach
+        </select>
+        </div>
+    <div class="form-group">
         <button type="submit" class="btn btn-outline-info">
         Simpan Data
         </button>

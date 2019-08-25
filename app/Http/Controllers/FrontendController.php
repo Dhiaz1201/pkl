@@ -25,7 +25,8 @@ class FrontendController extends Controller
     {
         $artikel = Artikel::where('slug', $artikel->slug)->get();
         $tag = Artikel::all();
-        return view('frontend.single-post', compact('artikel','tag'));
+        $menu = Artikel::all();
+        return view('frontend.single-post', compact('artikel','tag','menu'));
     }
     public function contact()
     {

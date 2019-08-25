@@ -17,7 +17,26 @@
             <h1>{{ $data->judul }}</h1>
             <div class="post_commentbox"> <a href="#"><i class="fa fa-user"></i>Wpfreeware</a> <span><i class="fa fa-calendar"></i>6:49 AM</span> <a href="#"><i class="fa fa-tags"></i>Technology</a> </div>
             <div class="single_page_content"> <img src="{{ asset('assets/img/artikel/'.$data->foto) }}" alt="">
-                        <iframe class="map"src="{{ $data->map }}" width="200px" height="200px" frameborder="0" style="border:0;" allowfullscreen=""></iframe>
+                                    <iframe class="map"src="{{ $data->map }}" width="200px" height="200px" frameborder="0" style="border:0;" allowfullscreen=""></iframe>
+            
+                  <p>
+                     <center> <a class="btn btn-primary rounded" data-toggle="collapse" href="#multiCollapseExample1" 
+                      role="button" aria-expanded="false" aria-controls="multiCollapseExample1">
+                      Menu</a></center>
+                    </p>
+                    <div class="row">
+                      <div class="col">
+                        <div class="collapse multi-collapse" id="multiCollapseExample1">
+                        @foreach($artikel as $data)
+                            <ul class="list-group list-group-flush">
+                            @foreach ($data->menu as $a )
+                                <li class="list-group-item text-primary">{{ $a->nama }} <span>Rp.{{ $a->harga }}</span></li>
+                            @endforeach
+                              </ul>
+                                @endforeach
+                           </div>
+                        </div>
+                      </div>
                  <p>{{ $data->konten }}</p>
               @endforeach
             </div>

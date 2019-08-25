@@ -6,12 +6,16 @@ use Illuminate\Database\Eloquent\Model;
 
 class Artikel extends Model
 {
-   protected $fillable = ['judul', 'slug', 'foto', 'konten','map', 'kategori_id', 'user_id'];
+   protected $fillable = ['judul', 'slug', 'foto', 'konten','map','menu_id', 'kategori_id', 'user_id'];
     public $timestamps = true;
 
     public function tag()
     {
         return $this->belongsToMany('App\Tag', 'artikel_tags', 'artikel_id', 'tag_id');
+    }
+ public function menu()
+    {
+        return $this->belongsToMany('App\Menu', 'artikel_menus', 'artikel_id', 'menu_id');
     }
 
     public function user()

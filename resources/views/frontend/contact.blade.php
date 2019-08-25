@@ -1,4 +1,4 @@
-@extends('layouts.frontend')
+@include('layouts.frontend')
 @section('content')
 <section id="contentSection">
     <div class="row">
