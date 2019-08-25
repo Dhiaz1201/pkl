@@ -1,3 +1,6 @@
+<style>
+.map{float:right;display:block;}
+</style>
 @extends('layouts.frontend')
 @section('content')
 <section id="contentSection">
@@ -14,31 +17,9 @@
             <h1>{{ $data->judul }}</h1>
             <div class="post_commentbox"> <a href="#"><i class="fa fa-user"></i>Wpfreeware</a> <span><i class="fa fa-calendar"></i>6:49 AM</span> <a href="#"><i class="fa fa-tags"></i>Technology</a> </div>
             <div class="single_page_content"> <img src="{{ asset('assets/img/artikel/'.$data->foto) }}" alt="">
+                        <iframe class="map"src="{{ $data->map }}" width="200px" height="200px" frameborder="0" style="border:0;" allowfullscreen=""></iframe>
                  <p>{{ $data->konten }}</p>
-              <blockquote> Donec volutpat nibh sit amet libero ornare non laoreet arcu luctus. Donec id arcu quis mauris euismod placerat sit amet ut metus. Sed imperdiet fringilla sem eget euismod. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Pellentesque adipiscing, neque ut pulvinar tincidunt, est sem euismod odio, eu ullamcorper turpis nisl sit amet velit. Nullam vitae nibh odio, non scelerisque nibh. Vestibulum ut est augue, in varius purus. </blockquote>
               @endforeach
-              <ul>
-                <li>Nullam vitae nibh odio, non scelerisque nibh</li>
-                <li>Nullam vitae nibh odio, non scelerisque nibh</li>
-                <li>Nullam vitae nibh odio, non scelerisque nibh</li>
-                <li>Nullam vitae nibh odio, non scelerisque nibh</li>
-                <li>Nullam vitae nibh odio, non scelerisque nibh</li>
-                <li>Nullam vitae nibh odio, non scelerisque nibh</li>
-              </ul>
-              <h2>This is h2 title</h2>
-              <h3>This is h3 title</h3>
-              <h4>This is h4 title</h4>
-              <h5>This is h5 title</h5>
-              <h6>This is h6 Title</h6>
-              <button class="btn default-btn">Default</button>
-              <button class="btn btn-red">Red Button</button>
-              <button class="btn btn-yellow">Yellow Button</button>
-              <button class="btn btn-green">Green Button</button>
-              <button class="btn btn-black">Black Button</button>
-              <button class="btn btn-orange">Orange Button</button>
-              <button class="btn btn-blue">Blue Button</button>
-              <button class="btn btn-lime">Lime Button</button>
-              <button class="btn btn-theme">Theme Button</button>
             </div>
             <div class="social_link">
               <ul class="sociallink_nav">
@@ -84,29 +65,8 @@
       <div class="col-lg-4 col-md-4 col-sm-4">
         <aside class="right_content">
           <div class="single_sidebar">
-            <h2><span>Popular Post</span></h2>
-            <ul class="spost_nav">
-              <li>
-                <div class="media wow fadeInDown"> <a href="single_page.html" class="media-left"> <img alt="" src="frontend/images/post_img1.jpg"> </a>
-                  <div class="media-body"> <a href="single_page.html" class="catg_title"> Aliquam malesuada diam eget turpis varius 1</a> </div>
-                </div>
-              </li>
-              <li>
-                <div class="media wow fadeInDown"> <a href="single_page.html" class="media-left"> <img alt="" src="frontend/images/post_img2.jpg"> </a>
-                  <div class="media-body"> <a href="single_page.html" class="catg_title"> Aliquam malesuada diam eget turpis varius 2</a> </div>
-                </div>
-              </li>
-              <li>
-                <div class="media wow fadeInDown"> <a href="single_page.html" class="media-left"> <img alt="" src="frontend/images/post_img1.jpg"> </a>
-                  <div class="media-body"> <a href="single_page.html" class="catg_title"> Aliquam malesuada diam eget turpis varius 3</a> </div>
-                </div>
-              </li>
-              <li>
-                <div class="media wow fadeInDown"> <a href="single_page.html" class="media-left"> <img alt="" src="frontend/images/post_img2.jpg"> </a>
-                  <div class="media-body"> <a href="single_page.html" class="catg_title"> Aliquam malesuada diam eget turpis varius 4</a> </div>
-                </div>
-              </li>
-            </ul>
+            <h2><span>Tag</span></h2>
+          
           </div>
           <div class="single_sidebar">
             <ul class="nav nav-tabs" role="tablist">
@@ -116,15 +76,15 @@
             </ul>
             <div class="tab-content">
               <div role="tabpanel" class="tab-pane active" id="category">
+                @foreach ($artikel  as $data )
                 <ul>
-                  <li class="cat-item"><a href="#">Sports</a></li>
-                  <li class="cat-item"><a href="#">Fashion</a></li>
-                  <li class="cat-item"><a href="#">Business</a></li>
-                  <li class="cat-item"><a href="#">Technology</a></li>
-                  <li class="cat-item"><a href="#">Games</a></li>
-                  <li class="cat-item"><a href="#">Life &amp; Style</a></li>
-                  <li class="cat-item"><a href="#">Photography</a></li>
-                </ul>
+                  <li class="cat-item"><a href="">
+                  @foreach($data->tag as $t)
+                  {{ $t->name }}
+                  @endforeach
+                  </a></li>
+                </ul>    
+                @endforeach
               </div>
               <div role="tabpanel" class="tab-pane" id="video">
                 <div class="vide_area">
@@ -158,18 +118,7 @@
             </div>
           </div>
           <div class="single_sidebar wow fadeInDown">
-            <h2><span>Sponsor</span></h2>
-            <a class="sideAdd" href="#"><img src="frontend/images/add_img.jpg" alt=""></a> </div>
-          <div class="single_sidebar wow fadeInDown">
-            <h2><span>Category Archive</span></h2>
-            <select class="catgArchive">
-              <option>Select Category</option>
-              <option>Life styles</option>
-              <option>Sports</option>
-              <option>Technology</option>
-              <option>Treads</option>
-            </select>
-          </div>
+           
           <div class="single_sidebar wow fadeInDown">
             <h2><span>Links</span></h2>
             <ul>

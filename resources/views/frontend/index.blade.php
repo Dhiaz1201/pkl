@@ -5,10 +5,11 @@
       <div class="col-lg-8 col-md-8 col-sm-8 latest-news">
         <div class="slick_slider">
       @foreach($artikel as $data)
-          <div class="single_iteam"> <a href="pages/single_page.html"> 
+          <div class="single_iteam"> <a href="{{ route('single-post', $data->slug) }}"> 
            <img src="{{ asset('assets/img/artikel/'.$data->foto) }}"></a>
             <div class="slider_article">
-               <h2><a class="slider_tittle" href="pages/single_page.html">{{ $data->judul }}</a></h2>
+            <iframe src="{{ $data->map }}" width="200px" height="200px" frameborder="0" style="border:0;" allowfullscreen=""></iframe>
+               <h2><a class="slider_tittle" href="{{ route('single-post', $data->slug) }}">{{ $data->judul }}</a></h2>
               <p>{!! substr($data->konten,0,100) !!}.....</p>
             </div>
           </div>
@@ -38,10 +39,16 @@
           <h2><span>Latest post</span></h2>
           <div class="latest_post_container">
             <div id="prev-button"><i class="fa fa-chevron-up"></i></div>
-            <ul class="latest_postnav singlepost">
-             
+            <ul class="latest_postnav">
+            @foreach ($artikel as $data )
+             <li>
+                <div class="media"> <a href="{{ route('single-post', $data->slug) }}" class="media-left"> <img alt="" src="{{ asset('assets/img/artikel/'.$data->foto) }}"> </a>
+                  <div class="media-body"> <a href="{{ route('single-post', $data->slug) }}" class="catg_title">{{ $data->judul }}</a> </div>
+                </div>
+              </li>
             </ul>
-            <div id="next-button"><i class="fa  fa-chevron-down"></i></div>
+            @endforeach
+            {{-- <div id="next-button"><i class="fa  fa-chevron-down"></img></div> --}}
           </div>
         </div>
       </div>
@@ -190,7 +197,7 @@
   </section>
   @endsection
   @push('script')
-   <script>
+   {{-- <script>
   
 
     var url ='api/json'
@@ -202,8 +209,8 @@
                        $(".singlepost").append(
                          `
                          <li>
-                <div class="media"> <a href="pages/single_page.html" class="media-left"> <img alt="" src="assets/img/artikel/${value.foto}"> </a>
-                  <div class="media-body"> <a href="pages/single_page.html" class="catg_title">${value.judul}</a> </div>
+                <div class="media"> <a href="{{ route('single-post', $data->slug) }}" class="media-left"> <img alt="" src="assets/img/artikel/${value.foto}"> </a>
+                  <div class="media-body"> <a href="{{ route('single-post', $data->slug) }}" class="catg_title">${value.judul}</a> </div>
                 </div>
               </li>
                         `
@@ -215,7 +222,7 @@
       }
 })
 
-     </script>
+     </script> --}}
       <script>
   
 
